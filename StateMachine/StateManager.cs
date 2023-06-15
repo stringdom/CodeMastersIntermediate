@@ -8,4 +8,8 @@ class StateManager
     {
         _state = state;
     }
+    public void Run(IState state)
+    {
+        
+    }
 }
