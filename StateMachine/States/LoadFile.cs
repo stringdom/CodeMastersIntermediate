@@ -7,7 +7,7 @@ namespace StateMachine
         public void Render()
         {
             Clear();
-            WriteLine("Writing a new File.");
+            WriteLine("Writing a new File on {0}.", Path);
         }
         public ICommand GetCommand(StateManager manager)
         {
