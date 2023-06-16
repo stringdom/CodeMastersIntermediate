@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace StateMachine;
 
 // Implements the Main menu State
@@ -6,22 +8,17 @@ public class MainMenu : IState
     public void Render()
     {
         Clear();
-        Console.WriteLine("This is the main menu.");
+        WriteLine("This is the main menu.");
     }
     public ICommand GetCommand(StateManager manager)
     {
         string input = StateManager.GetText("What do you want to do? ");
-        if (input.ToLower().Contains("save"))
+        return input.ToLower() switch
         {
-            return new SwitchOnOption(new SaveFile(), manager);
-        }
-        else if (input.ToLower().Contains("load"))
-        {
-            return new SwitchOnOption(new LoadFile(), manager);
-        }
-        else
-        {
-            return new SwitchOnOption(this, manager);
-        }
+            "save" => new SwitchOnOption(new SaveFile(), manager),
+            "load" => new SwitchOnOption(new LoadFile(), manager),
+            "new game" => new SwitchOnOption(new NewGame(), manager),
+            _ => new SwitchOnOption(this, manager),
+        };
     }
 }
