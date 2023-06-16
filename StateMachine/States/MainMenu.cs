@@ -19,6 +19,7 @@ public class MainMenu : IState
             "load" => new SwitchOnOption(new LoadFile(), manager),
             "new game" => new SwitchOnOption(new NewGame(), manager),
             "exit" => new SwitchOnOption(new ExitGame(), manager),
+            "help" => new Help(),
             _ => new SwitchOnOption(this, manager),
         };
     }
