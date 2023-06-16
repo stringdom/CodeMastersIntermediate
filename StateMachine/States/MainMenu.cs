@@ -10,6 +10,6 @@ public class MainMenu : IState
     public ICommand GetCommand(StateManager manager)
     {
         string input = StateManager.GetText("What do you want to do? ");
-        return SwitchOnOption(int);
+        return SwitchOnOption(IState newState);
     }
 }
