@@ -1,18 +1,16 @@
-using static System.Console;
-namespace StateMachine
+namespace StateMachine;
+
+class LoadFile : IState
 {
-    class LoadFile : IState
+    string Path { get; set; } = "save1.json";
+    public void Render()
     {
-        string Path { get; set; } = "save1.json";
-        public void Render()
-        {
-            Clear();
-            WriteLine("Writing a new File on {0}.", Path);
-        }
-        public ICommand GetCommand(StateManager manager)
-        {
-            // string input = StateManager.GetText("What do you want to do? ");
-            return new SwitchOnOption(new MainMenu(), manager);
-        }
+        Clear();
+        WriteLine("Writing a new File on {0}.", Path);
+    }
+    public ICommand GetCommand(StateManager manager)
+    {
+        string input = StateManager.GetText("What do you want to do? ");
+        return new SwitchOnOption(new MainMenu(), manager);
     }
 }

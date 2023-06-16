@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachine", "StateMachine\StateMachine.csproj", "{EA784CAD-8053-4910-AD91-128CEDE7CC1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElfinLibrary", "ElfinLibrary\ElfinLibrary.csproj", "{9DEC97E6-FA6E-48C3-9F06-415CC5FD6383}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{EA784CAD-8053-4910-AD91-128CEDE7CC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA784CAD-8053-4910-AD91-128CEDE7CC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA784CAD-8053-4910-AD91-128CEDE7CC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DEC97E6-FA6E-48C3-9F06-415CC5FD6383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEC97E6-FA6E-48C3-9F06-415CC5FD6383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEC97E6-FA6E-48C3-9F06-415CC5FD6383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEC97E6-FA6E-48C3-9F06-415CC5FD6383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
