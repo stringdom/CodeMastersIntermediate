@@ -1,6 +1,6 @@
 ﻿namespace StateMachine;
 
-public class SaveFile : IState
+public class SaveFile : IState, IFileOperator
 {
     public string Path { get; set; } = "../SaveFiles/";
     public string SaveName { get; set; } = "save1.txt";
@@ -27,5 +27,9 @@ public class SaveFile : IState
             "change" => new ChangeSaveFileName(this),
             _ => new SwitchOnOption( new MainMenu(), manager),
         };
+    }
+    public void SetParameter(string text)
+    {
+        SaveName = text;
     }
 }

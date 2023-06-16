@@ -2,13 +2,13 @@
 
 public class ChangeSaveFileName : ICommand
 {
-    public SaveFile File{ get; set;}
-    public ChangeSaveFileName(SaveFile file)
+    public IFileOperator File{ get; set;}
+    public ChangeSaveFileName(IFileOperator file)
     {
         File = file;
     }
     public void Execute()
     {
-        File.SaveName = StateManager.GetText("Write the new filename: ");
+        File.SetParameter(StateManager.GetText("Write the new filename: "));
     }
 }
