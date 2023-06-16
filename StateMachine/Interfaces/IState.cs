@@ -4,5 +4,5 @@
 interface IState
 {
     abstract void Render();
-    abstract void GetCommand();
+    abstract ICommand GetCommand(StateManager manager);
 }

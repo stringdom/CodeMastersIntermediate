@@ -7,8 +7,9 @@ public class MainMenu : IState
     {
         Console.WriteLine("This is the main menu.");
     }
-    public void GetCommand()
+    public ICommand GetCommand(StateManager manager)
     {
-
+        string input = StateManager.GetText("What do you want to do? ");
+        return SwitchOnOption(int);
     }
 }
