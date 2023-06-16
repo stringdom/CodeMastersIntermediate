@@ -14,7 +14,7 @@ public class LoadFile : IState, IFileOperator
         string input = StateManager.GetText("What do you want to do? ");
         return input.ToLower() switch
         {
-            "load" => new LoadFileCommand(manager),
+            "load" => new LoadFileCommand(Path, SaveName),
             "change" => new ChangeSaveFileName(this),
             _ => new SwitchOnOption( new MainMenu(), manager),
         };
