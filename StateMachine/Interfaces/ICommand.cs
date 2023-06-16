@@ -1,6 +1,7 @@
-namespace StateMachine;
-
-interface ICommand
+namespace StateMachine
 {
-    IState Execute();
+    public interface ICommand
+    {
+        public abstract void Execute();
+    }
 }
