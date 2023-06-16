@@ -18,6 +18,7 @@ public class MainMenu : IState
             "save" => new SwitchOnOption(new SaveFile(), manager),
             "load" => new SwitchOnOption(new LoadFile(), manager),
             "new game" => new SwitchOnOption(new NewGame(), manager),
+            "exit" => new SwitchOnOption(new ExitGame(), manager),
             _ => new SwitchOnOption(this, manager),
         };
     }
