@@ -1,12 +1,13 @@
 namespace StateMachine;
 
-class LoadFile : IState
+public class LoadFile : IState
 {
-    string Path { get; set; } = "save1.json";
+    string Path { get; set; } = "../SaveFiles/";
+    string SaveName { get; set; } = "save1.txt";
     public void Render()
     {
         Clear();
-        WriteLine("Writing a new File on {0}.", Path);
+        WriteLine("Reading file on {0}{1}.", Path, SaveName);
     }
     public ICommand GetCommand(StateManager manager)
     {

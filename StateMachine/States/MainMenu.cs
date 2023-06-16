@@ -11,6 +11,17 @@ public class MainMenu : IState
     public ICommand GetCommand(StateManager manager)
     {
         string input = StateManager.GetText("What do you want to do? ");
-        return new SwitchOnOption(new LoadFile(), manager);
+        if (input.ToLower().Contains("save"))
+        {
+            return new SwitchOnOption(new SaveFile(), manager);
+        }
+        else if (input.ToLower().Contains("load"))
+        {
+            return new SwitchOnOption(new LoadFile(), manager);
+        }
+        else
+        {
+            return new SwitchOnOption(this, manager);
+        }
     }
 }
